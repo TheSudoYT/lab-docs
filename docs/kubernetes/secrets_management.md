@@ -1,5 +1,7 @@
 # Kubernetes Secrets Management
 
+[TOC]
+
 # Overview
 
 The lab uses HashiCorp Vault as a central source for secrets management throughout the lab. Kuberentes secrets are sourced from Vault using Vault Secrets Operator (VSO).

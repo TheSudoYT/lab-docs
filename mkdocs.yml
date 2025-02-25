@@ -3,9 +3,21 @@ site_url: https://thelab.com
 theme:
   features:
     - content.code.copy
+    - navigation.tabs
+    - toc.follow
   name: material
+  icon:
+    # https://fontawesome.com/search
+    # https://simpleicons.org/
+    # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#using-icons
+    tag:
+      kubernetes: simple/kubernetes
+      metallb: simple/awselasticloadbalancing
+      networking:  material/ip-network
+      ingress: simple/ingress
+      traefik: simple/traefikproxy
   font:
-    text: Merriweather Sans
+    text: Roboto
     code: Red Hat Mono
   palette:
     # Dark Mode
@@ -24,11 +36,24 @@ theme:
       primary: blue
       accent: deep orange
 
+extra:
+  tags:
+    Kubernetes: kubernetes
+    MetalLB: metallb
+    Networking: networking
+    Traefik: traefik
+    Ingress: ingress
+
 plugins:
   - glightbox
+  - tags:
+      enabled: true
 
 markdown_extensions:
   - attr_list
+  - toc:
+      permalink: true
+      title: On this page
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
