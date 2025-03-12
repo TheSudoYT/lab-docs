@@ -16,6 +16,8 @@ theme:
       networking:  material/ip-network
       ingress: simple/ingress
       traefik: simple/traefikproxy
+      tls: material/certificate
+      vault: simple/vault
   font:
     text: Roboto
     code: Red Hat Mono
@@ -43,6 +45,8 @@ extra:
     Networking: networking
     Traefik: traefik
     Ingress: ingress
+    TLS: tls
+    HashiCorp Vault: vault
 
 plugins:
   - glightbox
@@ -51,6 +55,7 @@ plugins:
 
 markdown_extensions:
   - attr_list
+  - admonition
   - toc:
       permalink: true
       title: On this page

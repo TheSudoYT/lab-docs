@@ -1,3 +1,9 @@
+---
+tags:
+  - Kubernetes
+  - HashiCorp Vault
+---
+
 # Kubernetes Secrets Management
 
 [TOC]
@@ -6,7 +12,7 @@
 
 The lab uses HashiCorp Vault as a central source for secrets management throughout the lab. Kuberentes secrets are sourced from Vault using Vault Secrets Operator (VSO).
 
-## Implementation Overview
+# Implementation Overview
 
 - Each kubernetes cluster authenticates to its unique Vault kubernetes authentication method.
 - Each namespace in the kubernetes cluster authenticates to a namespace specific role.
@@ -14,7 +20,18 @@ The lab uses HashiCorp Vault as a central source for secrets management througho
 
 ![VSO](../assets/vault-secrets-operator.jpg)
 
-## VSO Configuration Management and Deployment with FluxCD
+# Vault Configuration
+
+!!! info "Rancher Clusters"
+
+    By default, Rancher clusters are proxied by Rancher at a unique cluster ID URL such as https://<RancherUrl>/k8s/clusters/<ClusterId> This is the kubernetes host you should provide to Vault.
+
+Each cluster has a kubernetes authentication method configurated. 
+
+```bash
+```
+
+# VSO Configuration Management and Deployment with FluxCD
 
 VSO deployment is standardized across all kubernetes clusters in the environment using FluxCD. The end goal is that each cluster created has a standardized VSO installed and communicating with its unique Vault kuberentes authentication method.
 

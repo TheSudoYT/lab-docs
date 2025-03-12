@@ -22,8 +22,10 @@ Traefik-v2 is used as the primary and default ingress controller for the cluster
 
 Traefik is deployed using FluxCD as part of the infrastructure stack on each cluster using Helm.
 
-- The same base deployment is standardized across all clusters.
+- The same base deployment is standardized across all clusters.`
+- Each cluster has an additional `traefik-dashboard` kustomization deployed to enable the dahsboard at `https://traefik.example.com/dashboard/#/`
 - Each application defines an `Ingress` of class name`Traefik` and other related CRDs as needed within their kustomizations.
+- DNS entried within the lab network must be created for each application URL resolving to the virtual IP MetalLB assigned to Traefik's service. For example, both uat-dev.lab.com and traefik-dev.lab.com DNS entries will both resolve to 10.5.0.1 which is the Traefik service.
 
 ### Defining Ingresses
 
